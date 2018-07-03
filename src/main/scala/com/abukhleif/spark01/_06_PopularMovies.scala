@@ -1,7 +1,6 @@
 package com.abukhleif.spark01
 
 import org.apache.spark._
-import org.apache.spark.SparkContext._
 import org.apache.log4j._
 import scala.io.Source
 import java.nio.charset.CodingErrorAction
@@ -45,7 +44,6 @@ object _06_PopularMovies {
 
   /** Load up a Map of movie IDs to movie names. */
   def loadMovieNames: Map[Int, String] = {
-
     // Handle character encoding issues:
     implicit val codec: Codec = Codec("UTF-8")
     codec.onMalformedInput(CodingErrorAction.REPLACE)
